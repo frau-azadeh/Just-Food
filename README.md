@@ -40,9 +40,6 @@ Follow these steps to set up the project locally:
         http://localhost:3000
     
 
-# 🌐 Live Demo
-Check out the live version of the app:[vercel]()
-
 # 🗺️ API Integration
     This project uses the TheMealDB API to fetch:
         Categories: /categories.php
