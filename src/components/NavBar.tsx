@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
   }, [searchQuery, categories]);
 
   return (
-    <nav className="bg-[#f87171] text-white shadow-lg ">
+    <nav className="bg-[#f87171] text-white shadow-lg sticky top-0 z-50">
       <div className="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold">

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useFetchCategories } from "../../hooks/useFetchCategories";
 import Filter from "@/components/Filter";
 import CategoryCard from "@/components/CategoryCard";
+import BackButton from "@/components/BackButton";
 
 const MenuPage: React.FC = () => {
   const { categories, loading, error } = useFetchCategories();
@@ -48,6 +49,7 @@ const MenuPage: React.FC = () => {
         showAll={showAll}
         toggleShowAll={toggleShowAll}
       />
+      <BackButton/>
     </div>
   );
 };

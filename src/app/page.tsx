@@ -1,9 +1,14 @@
+import React from 'react';
+import CategoriesCarousel from '@/components/CategoriesCarousel';
+import ImageSlider from '@/components/ImageSlider';
 
-export default function Home() {
+const Page: React.FC = () => {
   return (
-   <div>
-    <h1>Just Food!</h1>
-    <p>hhvh</p>
-   </div>
+    <div>
+      <ImageSlider/>
+      <CategoriesCarousel />
+    </div>
   );
-}
+};
+
+export default Page;

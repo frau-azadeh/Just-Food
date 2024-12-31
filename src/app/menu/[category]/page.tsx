@@ -4,6 +4,7 @@ import React from "react";
 import { useParams } from "next/navigation";
 import { useFetchMeals } from "../../../hooks/useFetchMeals";
 import Link from "next/link";
+import BackButton from "@/components/BackButton";
 
 const MealsPage: React.FC = () => {
   const { category } = useParams(); // دریافت نام دسته از URL
@@ -31,6 +32,7 @@ const MealsPage: React.FC = () => {
           </Link>
         ))}
       </div>
+      <BackButton/>
     </div>
   );
 };
