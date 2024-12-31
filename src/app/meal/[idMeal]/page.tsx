@@ -6,6 +6,7 @@ import { useFetchMealDetails } from "../../../hooks/useFetchMealDetails";
 import api from "../../../utils/api";
 import Link from "next/link";
 import BackButton from "@/components/BackButton";
+import MealNavigation from "@/components/MealNavigation";
 
 const MealDetailsPage: React.FC = () => {
   const { idMeal } = useParams();
@@ -165,6 +166,7 @@ const MealDetailsPage: React.FC = () => {
   </div>
 </div>
 <BackButton/>
+<MealNavigation/>
     </div>
   );
 };
