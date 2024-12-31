@@ -15,6 +15,7 @@ A beautifully designed Food Menu Application built with Next.js, TypeScript, and
 ⚡ Optimized Performance: Built using Next.js 14 and App Router.
 
 # 🛠️ Technologies Used
+
 Framework: Next.js 14
 
 Styling: TailwindCSS
