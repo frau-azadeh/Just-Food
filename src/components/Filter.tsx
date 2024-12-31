@@ -47,9 +47,7 @@ const Filter: React.FC<FilterProps> = ({
         >
           {showAll ? " less" : "more"}
         </button>
-      )}
-
-      
+      )} 
     </div>
   );
 };

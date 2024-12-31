@@ -6,27 +6,24 @@ import { useFetchMeals } from "../../../hooks/useFetchMeals";
 import Link from "next/link";
 import BackButton from "@/components/BackButton";
 import CategoriesCarousel from "@/components/CategoriesCarousel";
-import Pagination from "@/components/Pagination"; // کامپوننت جدید را ایمپورت کنید
+import Pagination from "@/components/Pagination"; 
 
 const MealsPage: React.FC = () => {
-  const { category } = useParams(); // دریافت نام دسته از URL
-  const categoryString = Array.isArray(category) ? category[0] : category; // تبدیل به string
+  const { category } = useParams(); 
+  const categoryString = Array.isArray(category) ? category[0] : category; 
 
   const { meals, loading, error } = useFetchMeals(categoryString);
 
-  // State برای مدیریت صفحه فعلی و تعداد آیتم‌ها در هر صفحه
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9; // تعداد آیتم‌ها در هر صفحه
+  const itemsPerPage = 9; 
 
   if (loading) return <p>Loading meals...</p>;
   if (error) return <p className="text-red-500">{error}</p>;
 
-  // محاسبه‌ی داده‌های صفحه فعلی
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentMeals = meals.slice(indexOfFirstItem, indexOfLastItem);
 
-  // تعداد کل صفحات
   const totalPages = Math.ceil(meals.length / itemsPerPage);
 
   return (
@@ -49,7 +46,6 @@ const MealsPage: React.FC = () => {
           ))}
         </div>
 
-        {/* کامپوننت Pagination */}
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

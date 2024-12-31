@@ -73,7 +73,6 @@ const MealDetailsPage: React.FC = () => {
 
   return (
     <div className="p-6 max-w-screen-xl mx-auto">
-      {/* تصویر بزرگ */}
       <div className="w-full mb-8">
         <img
           src={meal.strMealThumb}
@@ -82,12 +81,8 @@ const MealDetailsPage: React.FC = () => {
           style={{ maxHeight: "500px", objectFit: "cover" }}
         />
       </div>
-
-      {/* جزئیات اصلی */}
       <h1 className="text-4xl font-bold mb-6 text-center text-[#450a0a]">{meal.strMeal}</h1>
-
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 min-h-screen">
-  {/* جزئیات غذا */}
   <div className="col-span-2 bg-white p-6 rounded-lg shadow-lg">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       <div className="border rounded-lg p-4 shadow-lg text-center bg-white">
@@ -120,9 +115,7 @@ const MealDetailsPage: React.FC = () => {
     </ol>
   </div>
 
-  {/* ستون سمت چپ */}
   <div className=" space-y-6 lg:col-span-1 order-last  lg:sticky lg:top-4 lg:self-start lg:order-first">
-    {/* آخرین 3 دستور غذا از همان دسته */}
     <div className="bg-white p-4 rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4 text-[#450a0a]">Latest in {meal.strCategory}</h2>
       <div className="space-y-4">
@@ -142,8 +135,6 @@ const MealDetailsPage: React.FC = () => {
         ))}
       </div>
     </div>
-
-    {/* 3 غذای تصادفی از دسته‌های دیگر */}
     <div className="bg-white p-4 rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4 text-[#450a0a]">Explore Other Categories</h2>
       <div className="space-y-4">

@@ -6,7 +6,6 @@ import { FaArrowUp } from 'react-icons/fa';
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // کنترل نمایش دکمه
   const handleScroll = () => {
     if (window.scrollY > 300) {
       setIsVisible(true);
@@ -15,7 +14,6 @@ const ScrollToTop = () => {
     }
   };
 
-  // اسکرول به بالا
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

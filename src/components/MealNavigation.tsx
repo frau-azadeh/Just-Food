@@ -15,7 +15,6 @@ const MealNavigation: React.FC = () => {
   const [meals, setMeals] = useState<Meal[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(-1);
 
-  // Fetch meals from the same category
   useEffect(() => {
     const fetchMeals = async () => {
       try {
@@ -27,7 +26,6 @@ const MealNavigation: React.FC = () => {
 
         setMeals(mealList);
 
-        // Find the current meal's index
         const index = mealList.findIndex((m: Meal) => m.idMeal === idMeal);
         setCurrentIndex(index);
       } catch (error) {

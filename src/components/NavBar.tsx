@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaSearch } from 'react-icons/fa';
-import { IoMdRestaurant } from 'react-icons/io'; // آیکن رستوران یا کلاه آشپزی
+import { IoMdRestaurant } from 'react-icons/io'; 
 import Link from 'next/link';
-import api from '@/utils/api'; // Assuming this is where your API logic is
+import api from '@/utils/api'; 
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,6 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  // Fetch categories from the API
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -33,7 +32,6 @@ const Navbar: React.FC = () => {
     fetchCategories();
   }, []);
 
-  // Filter categories based on search query
   useEffect(() => {
     if (searchQuery) {
       const filtered = categories.filter((category) =>
@@ -48,15 +46,13 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-[#f87171] text-white shadow-lg sticky top-0 z-50">
       <div className="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo with Icon */}
         <div className="flex items-center space-x-2">
-          <IoMdRestaurant className="text-2xl text-white" /> {/* آیکن رستوران */}
+          <IoMdRestaurant className="text-2xl text-white" /> 
           <Link href="/" className="text-2xl font-bold">
             Just Food
           </Link>
         </div>
 
-        {/* Search Box for Desktop */}
         <div className="relative hidden lg:flex items-center w-1/3">
           <form
             className="flex items-center bg-white rounded-full px-4 py-1 w-full"
@@ -95,7 +91,6 @@ const Navbar: React.FC = () => {
           )}
         </div>
 
-        {/* Hamburger Menu Icon */}
         <button
           className="text-white text-2xl lg:hidden focus:outline-none"
           onClick={toggleMenu}
@@ -117,7 +112,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile View: Links and Search */}
       {isOpen && (
         <div className="lg:hidden bg-[#f87171] text-white">
           <div className="flex flex-col space-y-4 px-6 py-4">
@@ -131,7 +125,6 @@ const Navbar: React.FC = () => {
               Contact
             </Link>
 
-            {/* Search Box for Mobile */}
             <div className="relative">
               <form
                 className="flex items-center bg-white rounded-full px-4 py-1 mt-4"

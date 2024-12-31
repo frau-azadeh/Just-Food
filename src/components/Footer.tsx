@@ -7,7 +7,6 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-[#f87171] text-gray-800 shadow-lg">
       <div className="max-w-screen-xl mx-auto py-10 px-6 grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Quick Links */}
         <div>
           <h2 className="text-lg font-bold mb-4 text-white">Quick Links</h2>
           <ul className="space-y-2 text-white">
@@ -29,7 +28,6 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div>
           <h2 className="text-lg font-bold mb-4 text-white">Contact Us</h2>
           <p className="mb-2 text-white">123 Food Street, Cityville</p>
@@ -37,7 +35,6 @@ const Footer: React.FC = () => {
           <p className="mb-2 text-white">Email: support@justfood.com</p>
         </div>
 
-        {/* Call to Action */}
         <div>
           <h2 className="text-lg font-bold mb-4 text-white">Stay Updated</h2>
           <p className="mb-4 text-sm text-white">
@@ -58,7 +55,6 @@ const Footer: React.FC = () => {
           </form>
         </div>
 
-        {/* Social Media Icons */}
         <div>
           <h2 className="text-lg font-bold mb-4 text-white">Follow Us</h2>
           <p className="mb-4 text-sm text-white">
@@ -105,7 +101,6 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* بخش کپی‌رایت */}
       <div className="bg-[#7f1d1d] text-white text-center py-4">
         <p>🌻 azadeh sharifi soltani 🌻</p>
       </div>

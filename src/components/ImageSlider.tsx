@@ -26,7 +26,7 @@ const ImageSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // تغییر اسلاید هر 5 ثانیه
+    }, 5000); 
     return () => clearInterval(interval);
   }, [images.length]);
 
