@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaSearch } from 'react-icons/fa';
+import { IoMdRestaurant } from 'react-icons/io'; // آیکن رستوران یا کلاه آشپزی
 import Link from 'next/link';
 import api from '@/utils/api'; // Assuming this is where your API logic is
 
@@ -47,10 +48,13 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-[#f87171] text-white shadow-lg sticky top-0 z-50">
       <div className="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold">
-          Just Food
-        </Link>
+        {/* Logo with Icon */}
+        <div className="flex items-center space-x-2">
+          <IoMdRestaurant className="text-2xl text-white" /> {/* آیکن رستوران */}
+          <Link href="/" className="text-2xl font-bold">
+            Just Food
+          </Link>
+        </div>
 
         {/* Search Box for Desktop */}
         <div className="relative hidden lg:flex items-center w-1/3">

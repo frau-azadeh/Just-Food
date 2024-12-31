@@ -55,7 +55,7 @@ const MealNavigation: React.FC = () => {
       <button
         onClick={() => handleNavigation('prev')}
         disabled={currentIndex === 0}
-        className={`px-4 py-2 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 transition ${
+        className={`px-4 py-2 rounded-lg bg-[#7f1d1d] text-white font-medium transition ${
           currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
         }`}
       >
@@ -67,7 +67,7 @@ const MealNavigation: React.FC = () => {
       <button
         onClick={() => handleNavigation('next')}
         disabled={currentIndex === meals.length - 1}
-        className={`px-4 py-2 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 transition ${
+        className={`px-4 py-2 rounded-lg bg-[#7f1d1d] text-white font-medium transition ${
           currentIndex === meals.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
         }`}
       >

@@ -21,7 +21,7 @@ const Filter: React.FC<FilterProps> = ({
 
   return (
     <div className="w-full lg:w-1/4 bg-white border rounded-lg p-4 shadow-lg lg:sticky lg:top-4 lg:self-start lg:order-first lg:mb-0 mb-6">
-      <h2 className="text-xl font-semibold mb-4 text-center">دسته بندی</h2>
+      <h2 className="text-xl font-semibold mb-4 text-left text-[#450a0a]">Category</h2>
       {displayedCategories.map((category) => (
         <div
           key={category}
@@ -34,7 +34,7 @@ const Filter: React.FC<FilterProps> = ({
             onChange={() => handleFilterChange(category)}
             className="form-checkbox w-5 h-5 text-blue-600 border-gray-300 rounded"
           />
-          <label htmlFor={category} className="text-gray-700">
+          <label htmlFor={category} className="text-[#7f1d1d]">
             {category}
           </label>
         </div>
@@ -43,11 +43,13 @@ const Filter: React.FC<FilterProps> = ({
       {categories.length > 3 && (
         <button
           onClick={toggleShowAll}
-          className="mt-4 w-full text-blue-600 text-sm underline hover:text-blue-800"
+          className="mt-4 w-full text-blue-600 text-sm  hover:text-blue-800 text-left"
         >
-          {showAll ? "نمایش کمتر" : "نمایش بیشتر"}
+          {showAll ? " less" : "more"}
         </button>
       )}
+
+      
     </div>
   );
 };

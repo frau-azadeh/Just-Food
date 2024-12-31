@@ -54,7 +54,6 @@ const RandomMeals: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center py-8">
-      <h2 className="text-3xl font-bold mb-6 text-center">Random Meals</h2>
       <div className="w-full max-w-screen-lg px-4 space-y-8">
         {meals.map((meal, index) => (
           <div
@@ -69,8 +68,8 @@ const RandomMeals: React.FC = () => {
               className="w-full md:w-1/3 h-72 object-contain rounded-lg"
             />
             <div className="flex flex-col justify-between w-full">
-              <h3 className="text-xl font-semibold mb-4">{meal.strMeal}</h3>
-              <p className="text-gray-600 text-justify">
+              <h3 className="text-xl font-semibold mb-4 text-[#450a0a]">{meal.strMeal}</h3>
+              <p className=" text-justify text-[#7f1d1d]">
                 {meal.strInstructions.slice(0, 300)}...
               </p>
               <Link

@@ -26,7 +26,6 @@ const CategoriesCarousel = () => {
 
   return (
     <div className=" py-8 overflow-hidden">
-      <h2 className="text-3xl font-bold text-center mb-6">Categories</h2>
       <div className="overflow-hidden relative">
         <div className="flex animate-scroll gap-4">
           {categories.concat(categories).map((category, index) => (
@@ -40,7 +39,7 @@ const CategoriesCarousel = () => {
                   alt={category.strCategory}
                   className="w-full h-32 object-cover rounded-md mb-2"
                 />
-                <p className="text-gray-700 font-medium">{category.strCategory}</p>
+                <p className="text-[#7f1d1d] font-medium">{category.strCategory}</p>
               </Link>
             </div>
           ))}

@@ -16,7 +16,7 @@ const MealCard: React.FC<MealProps> = ({ idMeal, strMeal, strMealThumb }) => {
           alt={strMeal}
           className="rounded-t-lg w-full h-40 object-cover"
         />
-        <h2 className="text-lg font-semibold mt-2">{strMeal}</h2>
+        <h2 className="text-lg font-semibold mt-2 text-[#450a0a]">{strMeal}</h2>
       </div>
     </Link>
   );

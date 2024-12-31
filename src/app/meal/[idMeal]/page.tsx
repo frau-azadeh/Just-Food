@@ -84,34 +84,34 @@ const MealDetailsPage: React.FC = () => {
       </div>
 
       {/* جزئیات اصلی */}
-      <h1 className="text-4xl font-bold mb-6 text-center">{meal.strMeal}</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center text-[#450a0a]">{meal.strMeal}</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 min-h-screen">
   {/* جزئیات غذا */}
   <div className="col-span-2 bg-white p-6 rounded-lg shadow-lg">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       <div className="border rounded-lg p-4 shadow-lg text-center bg-white">
-        <h2 className="text-xl font-semibold mb-2">Category</h2>
-        <p className="font-medium">{meal.strCategory}</p>
+        <h2 className="text-xl font-semibold mb-2 text-[#450a0a]">Category</h2>
+        <p className="font-medium  text-[#7f1d1d]">{meal.strCategory}</p>
       </div>
       <div className="border rounded-lg p-4 shadow-lg text-center bg-white">
-        <h2 className="text-xl font-semibold mb-2">Cuisine</h2>
-        <p className="font-medium">{meal.strArea}</p>
+        <h2 className="text-xl font-semibold mb-2 text-[#450a0a]">Cuisine</h2>
+        <p className="font-medium  text-[#7f1d1d]">{meal.strArea}</p>
       </div>
     </div>
-    <h2 className="text-2xl font-semibold mb-4 text-center">Ingredients</h2>
+    <h2 className="text-2xl font-semibold mb-4 text-center text-[#450a0a]">Ingredients</h2>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
       {ingredients.map((ingredient, index) => (
         <div
           key={index}
-          className="bg-gray-100 text-center p-2 rounded-lg shadow"
+          className="bg-white text-center p-2 rounded-lg border shadow-lg text-[#7f1d1d]"
         >
           {ingredient}
         </div>
       ))}
     </div>
-    <h2 className="text-2xl font-semibold mt-6 mb-4 text-center">Instructions</h2>
-    <ol className="list-decimal list-inside text-gray-700 space-y-2">
+    <h2 className="text-2xl font-semibold mt-6 mb-4 text-center text-[#450a0a]">Instructions</h2>
+    <ol className="list-decimal list-inside text-[#7f1d1d] space-y-2">
       {instructions.map((step, index) => (
         <li key={index} className="leading-relaxed">
           {step}.
@@ -124,7 +124,7 @@ const MealDetailsPage: React.FC = () => {
   <div className=" space-y-6 lg:col-span-1 order-last  lg:sticky lg:top-4 lg:self-start lg:order-first">
     {/* آخرین 3 دستور غذا از همان دسته */}
     <div className="bg-white p-4 rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4">Latest in {meal.strCategory}</h2>
+      <h2 className="text-xl font-semibold mb-4 text-[#450a0a]">Latest in {meal.strCategory}</h2>
       <div className="space-y-4">
         {sameCategoryMeals.map((sameMeal) => (
           <Link
@@ -137,7 +137,7 @@ const MealDetailsPage: React.FC = () => {
               alt={sameMeal.strMeal}
               className="w-16 h-16 object-cover rounded-md"
             />
-            <p className="text-gray-700 font-medium">{sameMeal.strMeal}</p>
+            <p className=" text-[#7f1d1d] font-medium">{sameMeal.strMeal}</p>
           </Link>
         ))}
       </div>
@@ -145,7 +145,7 @@ const MealDetailsPage: React.FC = () => {
 
     {/* 3 غذای تصادفی از دسته‌های دیگر */}
     <div className="bg-white p-4 rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4">Explore Other Categories</h2>
+      <h2 className="text-xl font-semibold mb-4 text-[#450a0a]">Explore Other Categories</h2>
       <div className="space-y-4">
         {randomMeals.map((randomMeal) => (
           <Link
@@ -158,7 +158,7 @@ const MealDetailsPage: React.FC = () => {
               alt={randomMeal.strMeal}
               className="w-16 h-16 object-cover rounded-md"
             />
-            <p className="text-gray-700 font-medium">{randomMeal.strMeal}</p>
+            <p className=" text-[#7f1d1d] font-medium">{randomMeal.strMeal}</p>
           </Link>
         ))}
       </div>
