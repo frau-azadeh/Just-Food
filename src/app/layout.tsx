@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
 import ScrollToTop from "@/components/ScrollToTop";
+import MobileNavBar from "@/components/MobileNavBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Navbar/>
         {children}
         <ScrollToTop/>
+        <MobileNavBar />
         <Footer/>
       </body>
     </html>
