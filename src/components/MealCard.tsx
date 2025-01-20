@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image"; // ایمپورت Image از next/image
 
 type MealProps = {
   idMeal: string;
@@ -11,11 +12,15 @@ const MealCard: React.FC<MealProps> = ({ idMeal, strMeal, strMealThumb }) => {
   return (
     <Link href={`/meal/${idMeal}`}>
       <div className="border rounded-lg shadow-md p-4 hover:shadow-lg transition cursor-pointer">
-        <img
-          src={strMealThumb}
-          alt={strMeal}
-          className="rounded-t-lg w-full h-40 object-cover"
-        />
+        <div className="relative w-full h-40">
+          <Image
+            src={strMealThumb}
+            alt={strMeal}
+            layout="fill" // تصویر به اندازه ظرف پر می‌شود
+            objectFit="cover" // حفظ تناسب تصویر
+            className="rounded-t-lg"
+          />
+        </div>
         <h2 className="text-lg font-semibold mt-2 text-[#450a0a]">{strMeal}</h2>
       </div>
     </Link>

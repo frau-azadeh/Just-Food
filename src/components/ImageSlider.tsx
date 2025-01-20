@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image'; // ایمپورت Image از next/image
 import api from '@/utils/api';
 
 const ImageSlider = () => {
@@ -43,14 +44,15 @@ const ImageSlider = () => {
             index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
-          <img
+          <Image
             src={image}
             alt={`Slide ${index}`}
-            className="w-full h-full object-contain"
+            layout="fill" // تصویر را به اندازه ظرف پر می‌کند
+            objectFit="contain" // تصویر را به صورت contain نمایش می‌دهد
+            priority={index === currentIndex} // تصویر جاری با اولویت بارگذاری می‌شود
           />
         </div>
       ))}
-      
     </div>
   );
 };

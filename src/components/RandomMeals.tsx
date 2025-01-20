@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // ایمپورت Image از next/image
 import axios from 'axios';
 
 interface Meal {
@@ -62,11 +63,15 @@ const RandomMeals: React.FC = () => {
               index % 2 === 1 ? 'md:flex-row-reverse' : ''
             } items-center gap-6 bg-white shadow-lg rounded-lg p-6`}
           >
-            <img
-              src={meal.strMealThumb}
-              alt={meal.strMeal}
-              className="w-full md:w-1/3 h-72 object-contain rounded-lg"
-            />
+            <div className="relative w-full md:w-1/3 h-72">
+              <Image
+                src={meal.strMealThumb}
+                alt={meal.strMeal}
+                layout="fill" // تصویر به اندازه ظرف پر می‌شود
+                objectFit="contain" // حفظ تناسب تصویر
+                className="rounded-lg"
+              />
+            </div>
             <div className="flex flex-col justify-between w-full">
               <h3 className="text-xl font-semibold mb-4 text-[#450a0a]">{meal.strMeal}</h3>
               <p className=" text-justify text-[#7f1d1d]">

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image"; // ایمپورت Image از next/image
 
 type CategoryCardProps = {
   category: {
@@ -17,9 +18,11 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
       href={`/menu/${category.strCategory}`}
       className="border rounded-lg shadow-md p-4 hover:shadow-lg transition bg-white"
     >
-      <img
+      <Image
         src={category.strCategoryThumb}
         alt={category.strCategory}
+        width={300} // عرض تصویر
+        height={160} // ارتفاع تصویر
         className="w-full h-40 object-cover rounded-md mb-2"
       />
       <h2 className="text-lg font-semibold text-[#450a0a]">{category.strCategory}</h2>

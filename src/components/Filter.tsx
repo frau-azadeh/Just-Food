@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React from "react";
 
 type FilterProps = {
   categories: string[];
@@ -43,11 +43,11 @@ const Filter: React.FC<FilterProps> = ({
       {categories.length > 3 && (
         <button
           onClick={toggleShowAll}
-          className="mt-4 w-full text-blue-600 text-sm  hover:text-blue-800 text-left"
+          className="mt-4 w-full text-blue-600 text-sm hover:text-blue-800 text-left"
         >
-          {showAll ? " less" : "more"}
+          {showAll ? "less" : "more"}
         </button>
-      )} 
+      )}
     </div>
   );
 };
