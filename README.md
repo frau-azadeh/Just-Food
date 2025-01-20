@@ -23,8 +23,11 @@ Fully responsive and optimized for mobile devices:
 
 ![Mobile View](https://github.com/frau-azadeh/just-food/blob/master/mobile.png)
 
+## 🚀 Live Demo
 
-# 🚀 Features
+Check out the live application here: [Just Food](https://just-food5.vercel.app/)
+
+# ✨ Features
 
 🗂️ Dynamic Categories: Browse food categories fetched dynamically from an API.
 
