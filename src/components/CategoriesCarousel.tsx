@@ -9,7 +9,6 @@ import api from '@/utils/api';
 interface Category {
   strCategory: string;
   strCategoryThumb: string;
-  [key: string]: any;
 }
 
 const CategoriesCarousel = () => {
