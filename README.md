@@ -25,6 +25,7 @@ Fully responsive and optimized for mobile devices:
 
 
 # 🚀 Features
+
 🗂️ Dynamic Categories: Browse food categories fetched dynamically from an API.
 
 🥗 Filter Options: Interactive filter to refine the displayed categories.
