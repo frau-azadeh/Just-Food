@@ -90,5 +90,4 @@ const RandomMeals: React.FC = () => {
     </div>
   );
 };
-
 export default RandomMeals;
