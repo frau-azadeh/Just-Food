@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useFetchCategories } from "../../hooks/useFetchCategories";
 import Filter from "@/components/Filter";
 import CategoryCard from "@/components/CategoryCard";
@@ -27,7 +27,6 @@ const MenuPage: React.FC = () => {
     ? categories.filter((cat) => filteredCategories.includes(cat.strCategory))
     : categories;
 
-
   if (loading) return <p>Loading categories...</p>;
   if (error) return <p className="text-red-500">{error}</p>;
 
@@ -45,7 +44,7 @@ const MenuPage: React.FC = () => {
         showAll={showAll}
         toggleShowAll={toggleShowAll}
       />
-      <BackButton/>
+      <BackButton />
     </div>
   );
 };
