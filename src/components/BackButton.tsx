@@ -5,13 +5,11 @@ import { useEffect, useState } from 'react';
 
 const BackButton = () => {
   const router = useRouter();
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPosition = window.scrollY;
-      setScrollPosition(currentScrollPosition);
 
       // دکمه را فقط وقتی نشان دهید که اسکرول بیشتر از 100 باشد
       setIsVisible(currentScrollPosition > 100);
