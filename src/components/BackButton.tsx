@@ -6,10 +6,15 @@ import { useEffect, useState } from 'react';
 const BackButton = () => {
   const router = useRouter();
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollPosition(window.scrollY);
+      const currentScrollPosition = window.scrollY;
+      setScrollPosition(currentScrollPosition);
+
+      // دکمه را فقط وقتی نشان دهید که اسکرول بیشتر از 100 باشد
+      setIsVisible(currentScrollPosition > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -17,14 +22,16 @@ const BackButton = () => {
   }, []);
 
   return (
-    <button
-      onClick={() => router.back()}
-      style={{ bottom:100 }} 
-      className="fixed right-4 bg-[#7f1d1d] text-white p-3 rounded-lg shadow-md focus:outline-none z-50 transition-transform"
-      aria-label="Go back"
-    >
-      Back
-    </button>
+    isVisible && (
+      <button
+        onClick={() => router.back()}
+        style={{ bottom: 100 }}
+        className="fixed right-4 bg-[#7f1d1d] text-white p-3 rounded-lg shadow-md focus:outline-none z-50 transition-transform"
+        aria-label="Go back"
+      >
+        Back
+      </button>
+    )
   );
 };
 
