@@ -1,5 +1,28 @@
 # 🍔 Just Food
 A beautifully designed Food Menu Application built with Next.js, TypeScript, and TailwindCSS, where users can explore various food categories, view meal details, and filter their choices seamlessly.
+## 📸 Screenshots
+
+### 💻 Desktop View
+A clean and modern design for desktop users:
+
+![Desktop View](https://github.com/frau-azadeh/just-food/blob/master/desk.png)
+
+![Menu View](https://github.com/frau-azadeh/just-food/blob/master/desk-article.png)
+
+---
+
+### 📊 Tablet View
+Perfectly scales for tablets and mid-sized devices:
+
+![Tablet View](https://github.com/frau-azadeh/just-food/blob/master/tablet.png)
+
+---
+
+### 📱 Mobile View
+Fully responsive and optimized for mobile devices:
+
+![Mobile View](https://github.com/frau-azadeh/just-food/blob/master/mobile.png)
+
 
 # 🚀 Features
 🗂️ Dynamic Categories: Browse food categories fetched dynamically from an API.
