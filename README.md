@@ -69,6 +69,7 @@ Follow these steps to set up the project locally:
     
 
 ## 🗺️ API Integration
+
     This project uses the TheMealDB API to fetch:
         Categories: /categories.php
         Meals by Category: /filter.php?c={category}
