@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import api from '@/utils/api';
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import api from "@/utils/api";
 
 // تعریف تایپ برای داده‌ها
 interface Category {
@@ -17,10 +17,10 @@ const CategoriesCarousel = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await api.get('/categories.php');
+        const response = await api.get("/categories.php");
         setCategories(response.data.categories || []);
       } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error("Error fetching categories:", error);
       }
     };
 
@@ -48,7 +48,9 @@ const CategoriesCarousel = () => {
                   height={128} // تنظیم ارتفاع
                   className="w-full h-32 object-cover rounded-md mb-2"
                 />
-                <p className="text-[#7f1d1d] font-medium">{category.strCategory}</p>
+                <p className="text-[#7f1d1d] font-medium">
+                  {category.strCategory}
+                </p>
               </Link>
             </div>
           ))}

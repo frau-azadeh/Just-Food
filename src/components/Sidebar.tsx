@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image'; // استفاده از Image به جای img
+import React from "react";
+import Link from "next/link";
+import Image from "next/image"; // استفاده از Image به جای img
 
 type Meal = {
   idMeal: string;
@@ -22,7 +22,10 @@ const Sidebar: React.FC<SidebarProps> = ({ randomMeals }) => {
   );
 };
 
-const MealList: React.FC<{ title: string; meals: Meal[] }> = ({ title, meals }) => (
+const MealList: React.FC<{ title: string; meals: Meal[] }> = ({
+  title,
+  meals,
+}) => (
   <div className="bg-white p-4 rounded-lg shadow-md">
     <h2 className="text-xl font-semibold mb-4">{title}</h2>
     <div className="space-y-4">

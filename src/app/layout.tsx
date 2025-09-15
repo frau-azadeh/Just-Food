@@ -32,11 +32,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#fff7ed]`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
-        <ScrollToTop/>
+        <ScrollToTop />
         <MobileNavBar />
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

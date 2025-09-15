@@ -1,8 +1,11 @@
 # 🍔 Just Food
+
 A beautifully designed Food Menu Application built with Next.js, TypeScript, and TailwindCSS, where users can explore various food categories, view meal details, and filter their choices seamlessly.
+
 ## 📸 Screenshots
 
 ### 💻 Desktop View
+
 A clean and modern design for desktop users:
 
 ![Desktop View](https://github.com/frau-azadeh/just-food/blob/master/desk.png)
@@ -12,6 +15,7 @@ A clean and modern design for desktop users:
 ---
 
 ### 📊 Tablet View
+
 Perfectly scales for tablets and mid-sized devices:
 
 ![Tablet View](https://github.com/frau-azadeh/just-food/blob/master/tablet.png)
@@ -19,6 +23,7 @@ Perfectly scales for tablets and mid-sized devices:
 ---
 
 ### 📱 Mobile View
+
 Fully responsive and optimized for mobile devices:
 
 ![Mobile View](https://github.com/frau-azadeh/just-food/blob/master/mobile.png)
@@ -52,6 +57,7 @@ TypeScript: For strong typing and better developer experience.
 Axios: For fetching data from the TheMealDB API.
 
 # 🔧 Installation and Setup
+
 Follow these steps to set up the project locally:
 
     1.Clone the repository:
@@ -66,17 +72,17 @@ Follow these steps to set up the project locally:
 
     4.Open the app in your browser:
         http://localhost:3000
-    
 
 # 🗺️ API Integration
+
     This project uses the TheMealDB API to fetch:
         Categories: /categories.php
         Meals by Category: /filter.php?c={category}
         Meal Details: /lookup.php?i={mealId}
 
 # 🤝 Contributing
+
 🌻 Azadeh Sharifi Soltani
 
 Feel free to contribute to this project by submitting a pull request or opening an issue!
 Made with 💻, ☕, and 🌻 by Azadeh Sharifi Soltani
-

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import api from '@/utils/api';
+import React, { useState, useEffect } from "react";
+import { useParams, useRouter } from "next/navigation";
+import api from "@/utils/api";
 
 interface Meal {
   idMeal: string;
@@ -21,7 +21,9 @@ const MealNavigation: React.FC = () => {
         const mealResponse = await api.get(`/lookup.php?i=${idMeal}`);
         const meal = mealResponse.data.meals[0];
 
-        const categoryResponse = await api.get(`/filter.php?c=${meal.strCategory}`);
+        const categoryResponse = await api.get(
+          `/filter.php?c=${meal.strCategory}`,
+        );
         const mealList = categoryResponse.data.meals;
 
         setMeals(mealList);
@@ -29,15 +31,15 @@ const MealNavigation: React.FC = () => {
         const index = mealList.findIndex((m: Meal) => m.idMeal === idMeal);
         setCurrentIndex(index);
       } catch (error) {
-        console.error('Error fetching meals:', error);
+        console.error("Error fetching meals:", error);
       }
     };
 
     fetchMeals();
   }, [idMeal]);
 
-  const handleNavigation = (direction: 'prev' | 'next') => {
-    const newIndex = direction === 'prev' ? currentIndex - 1 : currentIndex + 1;
+  const handleNavigation = (direction: "prev" | "next") => {
+    const newIndex = direction === "prev" ? currentIndex - 1 : currentIndex + 1;
 
     if (newIndex >= 0 && newIndex < meals.length) {
       router.push(`/meal/${meals[newIndex].idMeal}`);
@@ -51,10 +53,10 @@ const MealNavigation: React.FC = () => {
   return (
     <div className="flex justify-between items-center mt-8">
       <button
-        onClick={() => handleNavigation('prev')}
+        onClick={() => handleNavigation("prev")}
         disabled={currentIndex === 0}
         className={`px-4 py-2 rounded-lg bg-[#7f1d1d] text-white font-medium transition ${
-          currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
+          currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
         Previous
@@ -63,10 +65,12 @@ const MealNavigation: React.FC = () => {
         {currentIndex + 1} of {meals.length}
       </span>
       <button
-        onClick={() => handleNavigation('next')}
+        onClick={() => handleNavigation("next")}
         disabled={currentIndex === meals.length - 1}
         className={`px-4 py-2 rounded-lg bg-[#7f1d1d] text-white font-medium transition ${
-          currentIndex === meals.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
+          currentIndex === meals.length - 1
+            ? "opacity-50 cursor-not-allowed"
+            : ""
         }`}
       >
         Next

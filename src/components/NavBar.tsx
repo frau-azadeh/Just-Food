@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaSearch } from 'react-icons/fa';
-import { IoMdRestaurant } from 'react-icons/io'; 
-import Link from 'next/link';
-import api from '@/utils/api'; 
+import React, { useState, useEffect } from "react";
+import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import { IoMdRestaurant } from "react-icons/io";
+import Link from "next/link";
+import api from "@/utils/api";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [categories, setCategories] = useState<string[]>([]);
   const [filteredCategories, setFilteredCategories] = useState<string[]>([]);
 
@@ -19,13 +19,13 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await api.get('/categories.php');
+        const response = await api.get("/categories.php");
         const categoryNames = response.data.categories.map(
-          (category: { strCategory: string }) => category.strCategory
+          (category: { strCategory: string }) => category.strCategory,
         );
         setCategories(categoryNames);
       } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error("Error fetching categories:", error);
       }
     };
 
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     if (searchQuery) {
       const filtered = categories.filter((category) =>
-        category.toLowerCase().includes(searchQuery.toLowerCase())
+        category.toLowerCase().includes(searchQuery.toLowerCase()),
       );
       setFilteredCategories(filtered);
     } else {
@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-[#f87171] text-white shadow-lg sticky top-0 z-50">
       <div className="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <IoMdRestaurant className="text-2xl text-white" /> 
+          <IoMdRestaurant className="text-2xl text-white" />
           <Link href="/" className="text-2xl font-bold">
             Just Food
           </Link>
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
                   key={category}
                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                   onClick={() => {
-                    setSearchQuery('');
+                    setSearchQuery("");
                     setIsOpen(false);
                     window.location.href = `/menu/${category}`;
                   }}
@@ -115,13 +115,25 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="lg:hidden bg-[#f87171] text-white">
           <div className="flex flex-col space-y-4 px-6 py-4">
-            <Link href="/menu" className="hover:text-gray-200 transition" onClick={toggleMenu}>
+            <Link
+              href="/menu"
+              className="hover:text-gray-200 transition"
+              onClick={toggleMenu}
+            >
               Menu
             </Link>
-            <Link href="/about" className="hover:text-gray-200 transition" onClick={toggleMenu}>
+            <Link
+              href="/about"
+              className="hover:text-gray-200 transition"
+              onClick={toggleMenu}
+            >
               About Us
             </Link>
-            <Link href="/contact" className="hover:text-gray-200 transition" onClick={toggleMenu}>
+            <Link
+              href="/contact"
+              className="hover:text-gray-200 transition"
+              onClick={toggleMenu}
+            >
               Contact
             </Link>
 
@@ -151,7 +163,7 @@ const Navbar: React.FC = () => {
                       key={category}
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                       onClick={() => {
-                        setSearchQuery('');
+                        setSearchQuery("");
                         setIsOpen(false);
                         window.location.href = `/menu/${category}`;
                       }}
