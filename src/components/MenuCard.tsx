@@ -24,7 +24,9 @@ const MenuCard: React.FC<MenuCardProps> = ({ category }) => {
           className="rounded-t-lg"
         />
       </div>
-      <h2 className="text-xl font-semibold mt-2 text-[#450a0a]">{category.strCategory}</h2>
+      <h2 className="text-xl font-semibold mt-2 text-[#450a0a]">
+        {category.strCategory}
+      </h2>
       <p className="text-sm text-gray-600 mt-1">
         {category.strCategoryDescription.slice(0, 80)}...
       </p>

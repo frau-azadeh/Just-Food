@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image'; // ایمپورت Image از next/image
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image"; // ایمپورت Image از next/image
+import axios from "axios";
 
 interface Meal {
   idMeal: string;
@@ -21,14 +21,18 @@ const RandomMeals: React.FC = () => {
       setLoading(true);
       try {
         const promises = Array.from({ length: 3 }, () =>
-          axios.get<{ meals: Meal[] }>('https://www.themealdb.com/api/json/v1/1/random.php')
+          axios.get<{ meals: Meal[] }>(
+            "https://www.themealdb.com/api/json/v1/1/random.php",
+          ),
         );
 
         const responses = await Promise.all(promises);
-        const fetchedMeals = responses.map((response) => response.data.meals[0]);
+        const fetchedMeals = responses.map(
+          (response) => response.data.meals[0],
+        );
         setMeals(fetchedMeals);
       } catch (error) {
-        console.error('Error fetching meals:', error);
+        console.error("Error fetching meals:", error);
       } finally {
         setLoading(false);
       }
@@ -60,7 +64,7 @@ const RandomMeals: React.FC = () => {
           <div
             key={meal.idMeal}
             className={`flex flex-col md:flex-row ${
-              index % 2 === 1 ? 'md:flex-row-reverse' : ''
+              index % 2 === 1 ? "md:flex-row-reverse" : ""
             } items-center gap-6 bg-white shadow-lg rounded-lg p-6`}
           >
             <div className="relative w-full md:w-1/3 h-72">
@@ -73,7 +77,9 @@ const RandomMeals: React.FC = () => {
               />
             </div>
             <div className="flex flex-col justify-between w-full">
-              <h3 className="text-xl font-semibold mb-4 text-[#450a0a]">{meal.strMeal}</h3>
+              <h3 className="text-xl font-semibold mb-4 text-[#450a0a]">
+                {meal.strMeal}
+              </h3>
               <p className=" text-justify text-[#7f1d1d]">
                 {meal.strInstructions.slice(0, 300)}...
               </p>

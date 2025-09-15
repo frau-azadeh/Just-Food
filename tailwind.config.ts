@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        scroll: 'scrollLeft 15s linear infinite',
+        scroll: "scrollLeft 15s linear infinite",
       },
       keyframes: {
         scrollLeft: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
     },

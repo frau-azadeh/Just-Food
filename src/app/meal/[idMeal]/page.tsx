@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
@@ -55,7 +55,7 @@ const MealDetailsPage: React.FC = () => {
             .slice(0, 3);
 
           const randomMealsPromises = randomCategories.map((category) =>
-            api.get(`/filter.php?c=${category}`)
+            api.get(`/filter.php?c=${category}`),
           );
 
           const randomMealsResponses = await Promise.all(randomMealsPromises);
@@ -95,20 +95,28 @@ const MealDetailsPage: React.FC = () => {
           style={{ maxHeight: "500px", objectFit: "cover" }}
         />
       </div>
-      <h1 className="text-4xl font-bold mb-6 text-center text-[#450a0a]">{meal.strMeal}</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center text-[#450a0a]">
+        {meal.strMeal}
+      </h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 min-h-screen">
         <div className="col-span-2 bg-white p-6 rounded-lg shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="border rounded-lg p-4 shadow-lg text-center bg-white">
-              <h2 className="text-xl font-semibold mb-2 text-[#450a0a]">Category</h2>
+              <h2 className="text-xl font-semibold mb-2 text-[#450a0a]">
+                Category
+              </h2>
               <p className="font-medium text-[#7f1d1d]">{meal.strCategory}</p>
             </div>
             <div className="border rounded-lg p-4 shadow-lg text-center bg-white">
-              <h2 className="text-xl font-semibold mb-2 text-[#450a0a]">Cuisine</h2>
+              <h2 className="text-xl font-semibold mb-2 text-[#450a0a]">
+                Cuisine
+              </h2>
               <p className="font-medium text-[#7f1d1d]">{meal.strArea}</p>
             </div>
           </div>
-          <h2 className="text-2xl font-semibold mb-4 text-center text-[#450a0a]">Ingredients</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-center text-[#450a0a]">
+            Ingredients
+          </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {ingredients.map((ingredient, index) => (
               <div
@@ -119,7 +127,9 @@ const MealDetailsPage: React.FC = () => {
               </div>
             ))}
           </div>
-          <h2 className="text-2xl font-semibold mt-6 mb-4 text-center text-[#450a0a]">Instructions</h2>
+          <h2 className="text-2xl font-semibold mt-6 mb-4 text-center text-[#450a0a]">
+            Instructions
+          </h2>
           <ol className="list-decimal list-inside text-[#7f1d1d] space-y-2">
             {instructions.map((step, index) => (
               <li key={index} className="leading-relaxed">
@@ -146,13 +156,17 @@ const MealDetailsPage: React.FC = () => {
                     alt={sameMeal.strMeal}
                     className="w-16 h-16 object-cover rounded-md"
                   />
-                  <p className="text-[#7f1d1d] font-medium">{sameMeal.strMeal}</p>
+                  <p className="text-[#7f1d1d] font-medium">
+                    {sameMeal.strMeal}
+                  </p>
                 </Link>
               ))}
             </div>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-4 text-[#450a0a]">Explore Other Categories</h2>
+            <h2 className="text-xl font-semibold mb-4 text-[#450a0a]">
+              Explore Other Categories
+            </h2>
             <div className="space-y-4">
               {randomMeals.map((randomMeal) => (
                 <Link
@@ -165,7 +179,9 @@ const MealDetailsPage: React.FC = () => {
                     alt={randomMeal.strMeal}
                     className="w-16 h-16 object-cover rounded-md"
                   />
-                  <p className="text-[#7f1d1d] font-medium">{randomMeal.strMeal}</p>
+                  <p className="text-[#7f1d1d] font-medium">
+                    {randomMeal.strMeal}
+                  </p>
                 </Link>
               ))}
             </div>

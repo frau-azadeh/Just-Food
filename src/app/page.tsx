@@ -1,15 +1,14 @@
-
-import React from 'react';
-import CategoriesCarousel from '@/components/CategoriesCarousel';
-import ImageSlider from '@/components/ImageSlider';
-import RandomMeals from '@/components/RandomMeals';
+import React from "react";
+import CategoriesCarousel from "@/components/CategoriesCarousel";
+import ImageSlider from "@/components/ImageSlider";
+import RandomMeals from "@/components/RandomMeals";
 
 const Page: React.FC = () => {
   return (
     <div>
-      <ImageSlider/>
+      <ImageSlider />
       <CategoriesCarousel />
-      <RandomMeals/>
+      <RandomMeals />
     </div>
   );
 };

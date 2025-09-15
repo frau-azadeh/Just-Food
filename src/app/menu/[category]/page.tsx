@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import { useParams } from "next/navigation";
@@ -6,16 +6,16 @@ import { useFetchMeals } from "../../../hooks/useFetchMeals";
 import Link from "next/link";
 import BackButton from "@/components/BackButton";
 import CategoriesCarousel from "@/components/CategoriesCarousel";
-import Pagination from "@/components/Pagination"; 
+import Pagination from "@/components/Pagination";
 
 const MealsPage: React.FC = () => {
-  const { category } = useParams(); 
-  const categoryString = Array.isArray(category) ? category[0] : category; 
+  const { category } = useParams();
+  const categoryString = Array.isArray(category) ? category[0] : category;
 
   const { meals, loading, error } = useFetchMeals(categoryString);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9; 
+  const itemsPerPage = 9;
 
   if (loading) return <p>Loading meals...</p>;
   if (error) return <p className="text-red-500">{error}</p>;
@@ -30,7 +30,9 @@ const MealsPage: React.FC = () => {
     <>
       <CategoriesCarousel />
       <div className="p-6 max-w-screen-xl mx-auto">
-        <h1 className="text-2xl font-bold mb-4 text-[#450a0a]">Meals in {categoryString}</h1>
+        <h1 className="text-2xl font-bold mb-4 text-[#450a0a]">
+          Meals in {categoryString}
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {currentMeals.map((meal) => (
             <Link href={`/meal/${meal.idMeal}`} key={meal.idMeal}>
@@ -40,7 +42,9 @@ const MealsPage: React.FC = () => {
                   alt={meal.strMeal}
                   className="rounded-t-lg w-full h-40 object-cover"
                 />
-                <h2 className="text-lg font-semibold mt-2 text-[#450a0a]">{meal.strMeal}</h2>
+                <h2 className="text-lg font-semibold mt-2 text-[#450a0a]">
+                  {meal.strMeal}
+                </h2>
               </div>
             </Link>
           ))}

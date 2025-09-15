@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 
@@ -21,7 +21,9 @@ const Filter: React.FC<FilterProps> = ({
 
   return (
     <div className="w-full lg:w-1/4 bg-white border rounded-lg p-4 shadow-lg lg:sticky lg:top-4 lg:self-start lg:order-first lg:mb-0 mb-6">
-      <h2 className="text-xl font-semibold mb-4 text-left text-[#450a0a]">Category</h2>
+      <h2 className="text-xl font-semibold mb-4 text-left text-[#450a0a]">
+        Category
+      </h2>
       {displayedCategories.map((category) => (
         <div
           key={category}

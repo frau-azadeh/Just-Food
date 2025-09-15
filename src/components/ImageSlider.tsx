@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image'; // ایمپورت Image از next/image
-import api from '@/utils/api';
+import React, { useEffect, useState } from "react";
+import Image from "next/image"; // ایمپورت Image از next/image
+import api from "@/utils/api";
 
 const ImageSlider = () => {
   const [images, setImages] = useState<string[]>([]);
@@ -11,13 +11,13 @@ const ImageSlider = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await api.get('/categories.php');
+        const response = await api.get("/categories.php");
         const fetchedImages = response.data.categories.map(
-          (category: { strCategoryThumb: string }) => category.strCategoryThumb
+          (category: { strCategoryThumb: string }) => category.strCategoryThumb,
         );
         setImages(fetchedImages);
       } catch (error) {
-        console.error('Error fetching images:', error);
+        console.error("Error fetching images:", error);
       }
     };
 
@@ -27,7 +27,7 @@ const ImageSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); 
+    }, 5000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -41,7 +41,7 @@ const ImageSlider = () => {
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
           <Image
