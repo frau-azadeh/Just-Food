@@ -7,7 +7,9 @@ interface BackButtonProps {
   threshold?: number; // چند پیکسل اسکرول بشه تا دکمه دیده بشه
 }
 
-const BackButtonComponent: React.FC<BackButtonProps> = ({ threshold = 100 }) => {
+const BackButtonComponent: React.FC<BackButtonProps> = ({
+  threshold = 100,
+}) => {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -17,7 +19,7 @@ const BackButtonComponent: React.FC<BackButtonProps> = ({ threshold = 100 }) => 
       const shouldShow = currentScrollPosition > threshold;
 
       // فقط وقتی مقدار عوض بشه state رو تغییر بده
-      setIsVisible(prev => (prev !== shouldShow ? shouldShow : prev));
+      setIsVisible((prev) => (prev !== shouldShow ? shouldShow : prev));
     };
 
     // بررسی اولیه
