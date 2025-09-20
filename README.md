@@ -32,7 +32,7 @@ Fully responsive and optimized for mobile devices:
 
 Check out the live application here: [Just Food](https://just-food5.vercel.app/)
 
-# ✨ Features
+## ✨ Features
 
 🗂️ Dynamic Categories: Browse food categories fetched dynamically from an API.
 
@@ -46,7 +46,7 @@ Check out the live application here: [Just Food](https://just-food5.vercel.app/)
 
 ⚡ Optimized Performance: Built using Next.js 14 and App Router.
 
-# 🛠️ Technologies Used
+## 🛠️ Technologies Used
 
 Framework: Next.js 14
 
@@ -55,6 +55,7 @@ Styling: TailwindCSS
 TypeScript: For strong typing and better developer experience.
 
 Axios: For fetching data from the TheMealDB API.
+
 
 # 🔧 Installation and Setup
 
@@ -73,7 +74,9 @@ Follow these steps to set up the project locally:
     4.Open the app in your browser:
         http://localhost:3000
 
+
 # 🗺️ API Integration
+
 
     This project uses the TheMealDB API to fetch:
         Categories: /categories.php
